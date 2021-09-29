@@ -15,7 +15,7 @@ At FORMULA USI 2021 you will build a real small-scale Donkey Car driving on a re
 
 ### Task
 
-Build a deep neural network model that performs lane-keeping and that is able to drive our little training track (see picture below). The vehicle should be able to drive up to **10 laps** in autonomous mode with the least number of failures (i.e., crashes or out of track episodes).
+Build a deep neural network model that performs lane-keeping and that is able to drive our ~~little~~ short? training track (see picture ~~below~~ above?). The vehicle should be able to drive up to **10 laps** in autonomous mode with the least number of failures (i.e., crashes or out of track episodes).
 
 ## Requisites
 Python 3.7, git 64 bit, miniconda 3.7 64 bit.
@@ -35,7 +35,7 @@ To install the *donkeycar* package, perform the following commands
 * git clone https://github.com/autorope/donkeycar.git
 * git checkout a91f88d
 * conda env remove -n donkey
-* conda env create -f install/envs/mac.yml
+* conda env create -f install/envs/<your-os>.yml (your-os: [mac, windows, ubuntu])
 * conda activate donkey
 * pip install -e .\[pc\] (ZSH version)
 * pip install -e .[pc] (Bash version)
@@ -64,15 +64,12 @@ In case of issues, you can also refer to the original [documentation](http://doc
 
 ## Donkey Car Simulator
 
-You need to donwload and use [our simulator](https://drive.google.com/drive/folders/1iZP2LKnRvib6T6yFSuGrhwtPUpeL9pXC?usp=sharing) (macOS/Windows/Linux).
+You need to download and use [our simulator](https://drive.google.com/drive/folders/1iZP2LKnRvib6T6yFSuGrhwtPUpeL9pXC?usp=sharing) (macOS/Windows/Linux).
 
 During autonomous (but also manual) driving, the simulator automatically records the driving behaviour and stores it into CSV files in a `Testing` directory (on macOS it is accessbile by right clicking the `donkey-sim-mac` file --> `Show Package Contents` --> `Contents`). The generated files are two:
 
 * `Simulation-<timestamp>.csv` records the telemetry for an entire simulation
-* `Laps - <timestamp>.csv` records the aggregates on a per lap basisDuring autonomous (but also manual) driving, the simulator automatically records the driving behaviour and stores it into CSV files in a `Testing` directory (on macOS it is accessbile by right clicking the `donkey-sim-mac` file --> `Show Package Contents` --> `Contents`). The generated files are two:
-
-* `Simulation-<timestamp>.csv` records the telemetry for an entire simulation
-* `Laps - <timestamp>.csv` records the aggregates on a per lap basis
+* `Laps - <timestamp>.csv` records the aggregates on a per lap basis.
 
 ## Building the Self-Driving Car
 
@@ -84,7 +81,7 @@ During autonomous (but also manual) driving, the simulator automatically records
 4. Select the newly created folder
 5. Select the scene `Sandbox Track`
 6. Select the button `Joystick/Keyboard w Rec`
-7. Drive manually trying to stay as much as possible at the center of track. For a decent model, 10 to 30 laps may be sufficient.
+7. Drive manually trying to stay as much as possible at the center of track. For a decent model, 10 to 30 laps ~~may~~ should be sufficient.
 
 ### Training
 
