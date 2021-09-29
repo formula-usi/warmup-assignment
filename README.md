@@ -99,7 +99,7 @@ Set the following configurations in the `myconfig.py` file
 
 1. `DONKEY_GYM = True`
 2. `DONKEY_SIM_PATH = "path to the simulator"`
-3. `DONKEY_GYM_ENV_NAME = "donkey-warehouse-v0"`
+3. `DONKEY_GYM_ENV_NAME = "donkey-warehouse-v0" (can it be fixed?)`
 
 For testing the behaviour of your lane keeping model, enable autonomus driving using the following command
 
