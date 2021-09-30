@@ -60,6 +60,8 @@ To create the a new Donkey Car project, perform the following commands
 * donkey createcar --path mycar/
 ```
 
+This will create a 'mycar/' folder. This will be your working folder for data collection, model training and testing. 
+
 In case of issues, you can also refer to the original [documentation](http://docs.donkeycar.com/guide/install_software/). 
 
 **Important:** Make sure your code run with Tensorflow 1.13.1. No Tensorflow2 models will be accepted.
