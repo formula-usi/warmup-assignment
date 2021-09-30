@@ -33,6 +33,7 @@ To install the *donkeycar* package, perform the following commands
 
 ```
 * git clone https://github.com/autorope/donkeycar.git
+* cd donkeycar
 * git checkout a91f88d
 * conda env remove -n donkey
 * conda env create -f install/envs/<your-os>.yml (your-os: [mac, windows, ubuntu])
