@@ -95,7 +95,7 @@ Train a [default model](https://docs.donkeycar.com/parts/keras/) using the colle
 python train.py --model <modelname>.h5 --tub <data> --type <modeltype> --aug
 ```
 
-Eventually, you can modify the trainig hyperparameter in the `myconfig.py` file.
+Eventually, you can modify the training hyperparameter in the `myconfig.py` file.
 
 ### Testing
 
