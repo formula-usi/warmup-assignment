@@ -1,10 +1,10 @@
 # Formula USI 2021 Warm up Assignment
 
-Assignment in preparation for the FORMULA USI 2021 Challenge, 5--7 November 2021, Campus Est, Lugano, Switzerland. This task is preparatory to what the Challenge would require you to do, thus do it at the best of your possibilities.
+Assignment in preparation for the FORMULA USI 2021 Challenge, 5--7 November 2021, Campus Est, Lugano, Switzerland. This task is preparatory to what the Challenge would require you to do, thus do it at the best of your possibilities!
 
 ## Testbed
 
-At FORMULA USI 2021 you will build a real small-scale Donkey Car driving on a real track. For this assignment, we require you to build a virtual Donkey Car driving on a virtual road in a simulator. Below is the virtual racing track.
+At FORMULA USI 2021 you will build a real small-scale [Donkey Car](https://www.donkeycar.com/) driving on a real track. For this assignment, we require you to build a virtual Donkey Car driving on a virtual road in a simulator. Below is the virtual racing track.
 
 *Virtual Environment (Unity)*
 
@@ -15,7 +15,7 @@ At FORMULA USI 2021 you will build a real small-scale Donkey Car driving on a re
 
 ### Task
 
-Build a deep neural network model that performs lane-keeping and that is able to drive our short training track (see picture above). The vehicle should be able to drive up to **10 laps** in autonomous mode with the least number of failures (i.e., crashes or out of track episodes).
+Build a deep neural network model that performs lane-keeping and that is able to drive our short training track (see picture above). The vehicle should be able to drive in autonomous mode with the least number of failures (i.e., crashes or out of track episodes).
 
 ## Requisites
 Python 3.7, git 64 bit, [miniconda 3.7 64 bit](https://docs.conda.io/en/latest/miniconda.html).
@@ -59,11 +59,11 @@ To create the a new Donkey Car project, perform the following commands
 * donkey createcar --path mycar/
 ```
 
-This will create a 'mycar/' folder. This will be your working folder for data collection, model training and testing. 
+This will create a `mycar/` folder. This will be your working folder for data collection, model training and testing. 
 
 In case of issues, you can also refer to the original [documentation](http://docs.donkeycar.com/guide/install_software/). 
 
-**Important:** Make sure your code run with Tensorflow 1.13.1. No Tensorflow2 models will be accepted.
+**Important:** Make sure your code run with Tensorflow 1.x. No TensorFlow 2 models will be accepted.
 
 ## Donkey Car Simulator
 
@@ -89,17 +89,17 @@ During autonomous (but also manual) driving, the simulator automatically records
 
 #### Data Cleaning
 
-There is a handy tool provided by the donkeycar package that lets you clean the dataset collected in the previous step (for example, by removing the images of the track in which you did not drive very well :wink:).
+There is a handy tool provided by the `donkey` package to "clean" the dataset collected in the previous step from unwanted/suboptimal driving data. For example, it can be used to remove the images corresponding to the parts of the track in which you did not drive well :wink:).
 
 1. `conda activate donkey`
 2. `donkey --tubclean mycar`
 3. `click on the 'data' folder` (assuming the `Log Dir` selected above is `mycar/data`)
 
-The tool lets you handle the collected stream like a video file, such that you can delete the images you do not want to be in your dataset.
+The tool handles the collected stream of images like a video file, such that you can delete the images you do not want to be in your dataset.
 
 ### Training
 
-Train a [default model](https://docs.donkeycar.com/parts/keras/) using the collected data. You can do it using the following command
+Train a [default model](https://docs.donkeycar.com/parts/keras/) using the collected data and data augmentation. You can do it using the following command
 
 ```
 python train.py --model <modelname>.h5 --tub <data> --type linear --aug
@@ -109,11 +109,11 @@ Eventually, you can modify the training hyperparameter in the `myconfig.py` file
 
 #### Training on Google Colab
 
-If you do not have a GPU or you do not want to train the model on your local machine, we've set up a [notebook](https://colab.research.google.com/drive/1gy0jwinkd1t4jYhIRraphBgtwNLj7-2s?usp=sharing) where you can train the model on the cloud using the free resources Google provides.
+If you do not have a GPU available, or if training the model on your local machine takes long, we have set up for you a Colab [notebook](https://colab.research.google.com/drive/1gy0jwinkd1t4jYhIRraphBgtwNLj7-2s?usp=sharing) where you can train the model on the cloud for free.
 
-Once you open the notebook, you can sign in to your Google Account and copy the notebook on your Google Drive. After that, follow the instructions on the notebook to train the model on the cloud and download it once the training is done.
+Once you open the notebook, sign in to your Google Account and copy the notebook on your Google Drive. After that, follow the instructions on the notebook to train the model on the cloud and download it once the training is done.
 
-If you choose to train the model on Google Colab you need to change the tensorflow version on your conda environment by:
+**Important:** If you choose to train the model on Google Colab, you must change the TensorFlow version on your `donkeycar` conda environment:
 
 1. `conda activate donkey`
 2. `pip uninstall tensorflow`
@@ -141,20 +141,20 @@ Select “Local Pilot (d)”
 
 Submit a `zip` file named `<name-surname>-formula-usi-warmup-assignment.zip` to [formulausi@usi.ch](mailto:formulausi@usi.ch). The file must contain
 
-1. the model in H5 format compatible with Tensorflow 1.13.1
+1. the model in H5 format compatible with Tensorflow 1.x
 2. your `Simulation-<timestamp>.csv` 
 * your `Laps - <timestamp>.csv` 
-* a text file with team information and everything you believe it is necessary to report us
+* a text file with team information and everything you believe it is necessary to report us (e.g., videos)
 
 
 ### Evaluation
 
-We will run your model on the simulator locally, and compare the results obtained with those we receive from you. The models will be evaluated automatically based on the lap time, avg CTE and failure scores, all to be minimized. This means that the car should drive on road, following the central trajectory as fast as possible with no failures.
+We will run your model on the simulator locally, and compare the results obtained with those we receive from you. The models will be evaluated automatically based on the lap time and failure scores, all to be minimized. This means that the car should drive on road with no failures.
 
 
 ### Contacts
 
-For issues and miscellaneous, contact [Andrea Stocco](mailto:andrea.stocco@usi.ch) and CC [Brian Pulfer](mailto:brian.pulfer@usi.ch).
+For issues, questions and miscellaneous, feel free to contact [Andrea Stocco](mailto:andrea.stocco@usi.ch) and CC [Brian Pulfer](mailto:brian.pulfer@usi.ch) and [Matteo Biagiola](mailto:matteo.biagiola@usi.ch).
 
 
 
