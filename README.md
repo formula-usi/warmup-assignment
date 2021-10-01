@@ -111,7 +111,7 @@ Eventually, you can modify the training hyperparameter in the `myconfig.py` file
 
 If you do not have a GPU or you do not want to train the model on your local machine, we've set up a [notebook](https://colab.research.google.com/drive/1gy0jwinkd1t4jYhIRraphBgtwNLj7-2s?usp=sharing) where you can train the model on the cloud using the free resources Google provides.
 
-Once you open the notebook, you can sign in to your Google Account and copy the notebook on your Google Drive. After that, follow the instruction on the notebook to train the model on the cloud and download it once the training is done.
+Once you open the notebook, you can sign in to your Google Account and copy the notebook on your Google Drive. After that, follow the instructions on the notebook to train the model on the cloud and download it once the training is done.
 
 If you choose to train the model on Google Colab you need to change the tensorflow version on your conda environment by:
 
