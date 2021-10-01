@@ -82,10 +82,9 @@ During autonomous (but also manual) driving, the simulator automatically records
 2. Open the simulator
 3. Click `Log dir`
 4. Select the newly created folder
-5. Select the `Donkey Camera Resolution` to be `160x120` (@Andrea, unless there is a way to automate this step during testing)
-6. Select the scene `Sandbox Track`
-7. Select the button `Joystick/Keyboard w Rec`
-8. Drive manually trying to stay as much as possible at the center of track. For a decent model, 10 to 30 laps should be sufficient.
+5. Select the scene `Sandbox Track`
+6. Select the button `Joystick/Keyboard w Rec`
+7. Drive manually trying to stay as much as possible at the center of track. For a decent model, 10 to 30 laps should be sufficient.
 
 #### Data Cleaning
 
@@ -132,8 +131,9 @@ For testing the behaviour of your lane keeping model, enable autonomus driving u
 ```
 python manage.py drive --model [models/<model-name.h5>]
 ```
-Go to: http://localhost:8887/drive
-Select “Local Pilot (d)”
+
+The simulator should open automatically and load the scene `Sandbox Track`. Then, open your web browser at http://localhost:8887/drive and 
+select “Local Pilot (d)” from the dropdown list. The vehicle should drive autonomously; telemetry data are recorded in the `Testing` directory.
 
 
 
