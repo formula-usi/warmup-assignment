@@ -1,6 +1,6 @@
-# Formula USI 2021 Warm up Assignment
+# Formula USI 2021 Warm-up Assignment
 
-Assignment in preparation for the FORMULA USI 2021 Challenge, 5--7 November 2021, Campus Est, Lugano, Switzerland. This task is preparatory to what the Challenge would require you to do, thus do it at the best of your possibilities!
+Assignment in preparation for the FORMULA USI 2021 Challenge, 5--7 November 2021, Campus Est, Lugano, Switzerland. This task is preparatory to what the Challenge would require you to do, thus do it to the best of your possibilities!
 
 ## Testbed
 
@@ -15,7 +15,7 @@ At FORMULA USI 2021 you will build a real small-scale [Donkey Car](https://www.d
 
 ### Task
 
-Build a deep neural network model that performs lane-keeping and that is able to drive our short training track (see picture above). The vehicle should be able to drive in autonomous mode with the least number of failures (i.e., crashes or out of track episodes).
+Build a deep neural network model that performs lane-keeping and that is able to drive our short training track (see picture above). The vehicle should be able to drive in autonomous mode with the least number of failures (i.e., crashes or out-of-track episodes).
 
 ## Requisites
 Python 3.7, git 64 bit, [miniconda 3.7 64 bit](https://docs.conda.io/en/latest/miniconda.html).
@@ -52,24 +52,24 @@ To install the *gym-donkeycar* package, perform the following commands
 * pip install -e .[gym-donkeycar] (Bash version)
 ```
 
-To create the a new Donkey Car project, perform the following commands
+To create a new Donkey Car project, perform the following commands
 
 ```
 * conda activate donkey
 * donkey createcar --path mycar/
 ```
 
-This will create a `mycar/` folder. This will be your working folder for data collection, model training and testing. 
+This will create a `mycar/` folder. This will be your working folder for data collection, model training, and testing. 
 
 In case of issues, you can also refer to the original [documentation](http://docs.donkeycar.com/guide/install_software/). 
 
-**Important:** Make sure your code run with Tensorflow 1.x. No TensorFlow 2 models will be accepted.
+**Important:** Make sure your code runs with Tensorflow 1.x. No TensorFlow 2 models will be accepted.
 
 ## Donkey Car Simulator
 
 You need to download and use [our simulator](https://drive.google.com/drive/folders/1iZP2LKnRvib6T6yFSuGrhwtPUpeL9pXC?usp=sharing) (macOS/Windows/Linux).
 
-During autonomous (but also manual) driving, the simulator automatically records the driving behaviour and stores it into CSV files in a `Testing` directory (on macOS it is accessbile by right clicking the `donkey-sim-mac` file --> `Show Package Contents` --> `Contents`). The generated files are two:
+During autonomous (but also manual) driving, the simulator automatically records the driving behavior and stores it into CSV files in a `Testing` directory (on macOS it is accessible by right-clicking the `donkey-sim-mac` file --> `Show Package Contents` --> `Contents`). The generated files are two:
 
 * `Simulation-<timestamp>.csv` records the telemetry for an entire simulation
 * `Laps - <timestamp>.csv` records the aggregates on a per lap basis.
@@ -84,7 +84,7 @@ During autonomous (but also manual) driving, the simulator automatically records
 4. Select the newly created folder
 5. Select the scene `Sandbox Track`
 6. Select the button `Joystick/Keyboard w Rec`
-7. Drive manually trying to stay as much as possible at the center of track. For a decent model, 10 to 30 laps should be sufficient.
+7. Drive manually trying to stay as much as possible at the center of the track. For a decent model, 10 to 30 laps should be sufficient.
 
 #### Data Cleaning
 
@@ -126,14 +126,13 @@ Set the following configurations in the `myconfig.py` file
 2. `DONKEY_SIM_PATH = "path to the simulator"`
 3. `DONKEY_GYM_ENV_NAME = "donkey-warehouse-v0"`
 
-For testing the behaviour of your lane keeping model, enable autonomus driving using the following command
+For testing the behavior of your lane keeping model, enable autonomous driving using the following command
 
 ```
 python manage.py drive --model [models/<model-name.h5>]
 ```
 
-The simulator should open automatically and load the scene `Sandbox Track`. Then, open your web browser at http://localhost:8887/drive and 
-select “Local Pilot (d)” from the dropdown list. The vehicle should drive autonomously; telemetry data are recorded in the `Testing` directory.
+The simulator should open automatically and load the scene `Sandbox Track`. Then, open your web browser at http://localhost:8887/drive and select “Local Pilot (d)” from the dropdown list. The vehicle should drive autonomously; telemetry data are recorded in the `Testing` directory.
 
 
 
@@ -154,7 +153,7 @@ We will run your model on the simulator locally, and compare the results obtaine
 
 ### Contacts
 
-For issues, questions and miscellaneous, feel free to contact [Andrea Stocco](mailto:andrea.stocco@usi.ch) and CC [Brian Pulfer](mailto:brian.pulfer@usi.ch) and [Matteo Biagiola](mailto:matteo.biagiola@usi.ch).
+For issues, questions, and miscellaneous, feel free to contact [Andrea Stocco](mailto:andrea.stocco@usi.ch) and CC [Brian Pulfer](mailto:brian.pulfer@usi.ch) and [Matteo Biagiola](mailto:matteo.biagiola@usi.ch).
 
 
 
